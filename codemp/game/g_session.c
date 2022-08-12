@@ -88,8 +88,8 @@ void G_WriteClientSessionData( gclient_t *client ) {
 
 		i++;
 	}
-
-	if( client->sess.password && client->sess.password[0])
+	//Tempoary remove md5 digest
+	/*if( client->sess.password && client->sess.password[0])
 	{
 		unsigned char md[MD5_DIGEST_LENGTH];
 		EVP_Digest(client->sess.password, strlen(client->sess.password), md, NULL, EVP_md5(), NULL);
@@ -99,7 +99,7 @@ void G_WriteClientSessionData( gclient_t *client ) {
 	else
 	{
 			md5sum[0] = 0;
-	}
+	}*/
 
 	s = va("%i %i %i %i %i %i %i %i %i %i %i %i %s %s", 
 		client->sess.sessionTeam,

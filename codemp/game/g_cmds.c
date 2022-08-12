@@ -10559,8 +10559,8 @@ qboolean ReadUserFile( gentity_t *ent, char* username, char* password, qboolean 
 			fileData[i] ^= encodingKey[encodingKeyPos];
 		}
 	}
-
-	if ( succeeded && sscanf(ptr, "%s %i %i %i" , ent->client->sess.password, &permissions, &credits, &otherValue) == 4 )
+	//Tempory remove md5 digest
+	/*if ( succeeded && sscanf(ptr, "%s %i %i %i" , ent->client->sess.password, &permissions, &credits, &otherValue) == 4 )
 	{
 		if( password && SHA )
 		{
@@ -10595,7 +10595,7 @@ qboolean ReadUserFile( gentity_t *ent, char* username, char* password, qboolean 
 	else
 	{
 		succeeded = qfalse;
-	}
+	}*/
 	
 	if ( !succeeded )
 	{

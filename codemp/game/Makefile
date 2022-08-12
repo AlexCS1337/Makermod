@@ -1,8 +1,9 @@
 CC := gcc
 ARCH = $(shell uname -m)
 TARGET = ./jampgamei386.so
-CFLAGS = -fPIC -w -lm -lssl -I../qcommon -I../server -I../icarus -I../ghoul2 -I../../libs/openssl/include/ -I./ -DMISSIONPACK -DQAGAME -D_JK2 -DFINAL_BUILD -DMM_WIP -DMM_RELEASE -DMM_THROW -DMM_THROW2 -DJK2AWARDS -DNO_ENGINE_PATCH
-
+CFLAGS = -m32 -fPIC -w -lm -L/usr/lib/i386-linux-gnu -I/usr/include/openssl -I../qcommon -I../server -I../icarus -I../ghoul2 -I./ -DMISSIONPACK -DQAGAME -D_JK2 -DFINAL_BUILD -DMM_WIP -DMM_RELEASE -DMM_THROW -DMM_THROW2 -DJK2AWARDS -DNO_ENGINE_PATCH -lssl -lcrypto -ldl -lpthread
+#LDFLAGS = -L/usr/include
+#LDLIBS = -lssl -lcrypto
 
 # gl_hrtimer.c
 # bg_lib.c
